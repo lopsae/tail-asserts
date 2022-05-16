@@ -24,6 +24,21 @@ class TailAssertsTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+
+        XCTAssert(true, "XCTAssert message")
+        // "XCTAssertTrue failed - XCTAssert message"
+
+        XCTAssertNil(nil, "XCTAssertNil message")
+        // "XCTAssertNil failed: "one" - XCTAssertNil message"
+
+        XCTAssertTrue(true, "XCTAssertTrue message")
+        // "XCTAssertTrue failed - XCTAssertTrue message"
+
+        XCTAssertEqual("one", "one", "XCTAssertEqual message")
+        // "XCTAssertEqual failed: ("one") is not equal to ("two") - XCTAssertEqual message"
+
+        // XCTFail("XCTFail message")
+        // "failed - XCTFail message"
     }
 
     func testPerformanceExample() throws {
