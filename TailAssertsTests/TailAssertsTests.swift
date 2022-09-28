@@ -32,15 +32,18 @@ class TailAssertsTests: XCTestCase {
         print(functionFailure.makeMessage())
 
         let cleanedFunctionFailure = Failure.make(
-            function: "cleanedTestFunction(param:test:_:file:line)", file: "TestFile.swift", line: 55)
+            function: "cleanedTestFunction(param:test:_:file:line:)", file: "TestFile.swift", line: 55)
         print(cleanedFunctionFailure.makeMessage())
     }
 
     func testExample() throws {
         XCTAssert(true, "XCTAssert message")
+        true.assertTrue()
+        false.assertTrue("some message")
         // "XCTAssertTrue failed - XCTAssert message"
 
         XCTAssertNil(nil, "XCTAssertNil message")
+        XCTAssertNil("one", "XCTAssertNil message")
         // "XCTAssertNil failed: "one" - XCTAssertNil message"
 
         XCTAssertTrue(true, "XCTAssertTrue message")

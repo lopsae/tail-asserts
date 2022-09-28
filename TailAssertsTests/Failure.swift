@@ -17,8 +17,8 @@ struct Failure {
 
 
     static func make(
-        message: @autoclosure () -> String = .init(),
-        otherMessages: @autoclosure () -> [String] = [],
+        message: @autoclosure Message = .init(),
+        otherMessages: @autoclosure Messages = [],
         function: StaticString,
         file: StaticString, line: UInt)
     -> Failure {
@@ -29,8 +29,8 @@ struct Failure {
 
 
     static func trigger(
-        message: @autoclosure () -> String = .init(),
-        otherMessages: @autoclosure () -> [String] = [],
+        message: @autoclosure Message = .init(),
+        otherMessages: @autoclosure Messages = [],
         function: StaticString,
         file: StaticString, line: UInt)
     {
@@ -42,7 +42,7 @@ struct Failure {
 
 
     func makeMessage() -> String {
-        let cleanFunction = function.description.replacingOccurrences(of: "_:file:line", with: "")
+        let cleanFunction = function.description.replacingOccurrences(of: "_:file:line:", with: "")
         let messageHead = message.isEmpty
             ? "\(cleanFunction) failed"
             : "\(cleanFunction) failed: \(message)"
