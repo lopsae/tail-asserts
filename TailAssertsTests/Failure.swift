@@ -6,6 +6,30 @@
 import XCTest
 
 
+/// Defines a format for assertion failures.
+///
+/// In general the format is made of these parts:
+/// ```
+/// {functionSignature} failed
+/// // only with assertionMessage
+/// {functionSignature} failed: {assertionMessage}
+/// // only with additionalMessages
+/// {functionSignature} failed - {addlMessage} - {moreAddlMessage}
+/// // with all messages
+/// {functionSignature} failed: {assertionMessage} - {addlMessage} - {moreAddlMessage}
+/// ```
+///
+/// + `{functionSignature}` - The signature of the `assertX(...)` function being
+///   called. The trailing `_:file:line:` of the signature is when the failure
+///   message is prepared.
+/// + `{assertionMessage}` - Information related to the assertion done, like
+///   expected values. Can be ommited when failure is obvious or no more
+///   information can be provided, E.g. `bool.assertTrue()`
+/// + `{addMessage}` - Addional messages provided at the assertion call, E.g.
+///   `false.assertTrue("additional message")`. For custom assertions that
+///   internally perform other assertions, a collection of additional messages
+///   can be provided. When the failure message is prepared all messages are
+///   separated with dashes ` - `.
 struct Failure {
 
     let function: StaticString
