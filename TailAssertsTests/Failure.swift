@@ -20,8 +20,8 @@ import XCTest
 /// ```
 ///
 /// + `{functionSignature}` - The signature of the `assertX(...)` function being
-///   called. The trailing `_:file:line:` of the signature is when the failure
-///   message is prepared.
+///   called. The trailing `_:file:line:` of the signature is ommited when the
+///   failure message is prepared.
 /// + `{assertionMessage}` - Information related to the assertion done, like
 ///   expected values. Can be ommited when failure is obvious or no more
 ///   information can be provided, E.g. `bool.assertTrue()`

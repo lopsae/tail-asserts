@@ -39,6 +39,8 @@ class TailAssertsTests: XCTestCase {
     func testExample() throws {
         XCTAssert(true, "XCTAssert message")
         true.assertTrue()
+        false.assertFalse()
+
         false.assertTrue("some message")
         // "XCTAssertTrue failed - XCTAssert message"
 
