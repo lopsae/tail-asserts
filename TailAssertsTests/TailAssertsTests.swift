@@ -26,6 +26,14 @@ class TailAssertsTests: XCTestCase {
             message: "main message", otherMessages: ["message one", "message two"],
             function: "testFunction()", file: "TestFile.swift", line: 55)
         print(allMessageFailure.makeMessage())
+
+        let functionFailure = Failure.make(
+            function: "testFunction(param:test:)", file: "TestFile.swift", line: 55)
+        print(functionFailure.makeMessage())
+
+        let cleanedFunctionFailure = Failure.make(
+            function: "cleanedTestFunction(param:test:_:file:line)", file: "TestFile.swift", line: 55)
+        print(cleanedFunctionFailure.makeMessage())
     }
 
     func testExample() throws {
