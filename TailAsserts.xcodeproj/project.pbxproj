@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D02895D28E4C1BE00D2589A /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02895C28E4C1BE00D2589A /* Failure.swift */; };
 		2D714F6D2832BA01000029AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D714F6C2832BA01000029AA /* AppDelegate.swift */; };
 		2D714F6F2832BA01000029AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D714F6E2832BA01000029AA /* SceneDelegate.swift */; };
 		2D714F712832BA01000029AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D714F702832BA01000029AA /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D02895C28E4C1BE00D2589A /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
 		2D714F692832BA01000029AA /* TailAsserts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TailAsserts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D714F6C2832BA01000029AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D714F6E2832BA01000029AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		2D714F822832BA02000029AA /* TailAssertsTests */ = {
 			isa = PBXGroup;
 			children = (
+				2D02895C28E4C1BE00D2589A /* Failure.swift */,
 				2D714F832832BA02000029AA /* TailAssertsTests.swift */,
 			);
 			path = TailAssertsTests;
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D02895D28E4C1BE00D2589A /* Failure.swift in Sources */,
 				2D714F842832BA02000029AA /* TailAssertsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

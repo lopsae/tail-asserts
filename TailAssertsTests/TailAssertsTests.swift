@@ -1,30 +1,34 @@
 //
-//  TailAssertsTests.swift
 //  TailAssertsTests
 //
-//  Created by Maic Lopez Saenz on 5/16/22.
-//
 
-import XCTest
+
 @testable import TailAsserts
+import XCTest
+
 
 class TailAssertsTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    func testFailureStruct() {
+        let noMessageFailure = Failure.make(
+            function: "testFunction()", file: "TestFile.swift", line: 55)
+        print(noMessageFailure.makeMessage())
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        let messageFailure = Failure.make(
+            message: "main message", function: "testFunction()", file: "TestFile.swift", line: 55)
+        print(messageFailure.makeMessage())
+
+        let onlyOtherMessageFailure = Failure.make(
+            otherMessages: ["message one", "message two"], function: "testFunction()", file: "TestFile.swift", line: 55)
+        print(onlyOtherMessageFailure.makeMessage())
+
+        let allMessageFailure = Failure.make(
+            message: "main message", otherMessages: ["message one", "message two"],
+            function: "testFunction()", file: "TestFile.swift", line: 55)
+        print(allMessageFailure.makeMessage())
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-
         XCTAssert(true, "XCTAssert message")
         // "XCTAssertTrue failed - XCTAssert message"
 
