@@ -47,11 +47,16 @@ class TailAssertsTests: XCTestCase {
         // "XCTAssertTrue failed - caller message"
 
         Optional<String>.none.assertNil()
-        Optional<String>.some("something")
-            .assertNil()
 
-        Optional<String>.some("something")
-            .assertNil("caller message")
+        let something: String? = "something"
+        let nothing: String? = nil
+        something.assertNil()
+        something.assertNil("caller message")
+
+        nothing.assertExists()
+        nothing.assertExists("caller message")
+
+        something.assertExists()
 
         XCTAssertNil("one", "caller message")
         // "XCTAssertNil failed: "one" - caller message"
