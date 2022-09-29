@@ -43,9 +43,6 @@ class TailAssertsTests: XCTestCase {
 
         false.assertTrue("caller message")
 
-        XCTAssert(false, "caller message")
-        // "XCTAssertTrue failed - caller message"
-
         Optional<String>.none.assertNil()
 
         let something: String? = "something"
@@ -71,18 +68,6 @@ class TailAssertsTests: XCTestCase {
 
         something.assertExists()?
             .assertsStarts(with: "nope", "caller message")
-
-        XCTAssertNil("one", "caller message")
-        // "XCTAssertNil failed: "one" - caller message"
-
-        XCTAssertTrue(true, "XCTAssertTrue message")
-        // "XCTAssertTrue failed - XCTAssertTrue message"
-
-        XCTAssertEqual("one", "one", "XCTAssertEqual message")
-        // "XCTAssertEqual failed: ("one") is not equal to ("two") - XCTAssertEqual message"
-
-        // XCTFail("XCTFail message")
-        // "failed - XCTFail message"
     }
 
     func testPerformanceExample() throws {
