@@ -56,7 +56,21 @@ class TailAssertsTests: XCTestCase {
         nothing.assertExists()
         nothing.assertExists("caller message")
 
-        something.assertExists()
+        // Silent failure!
+        nothing?.assertsStarts(with: "no")
+
+        // Preferred unwrapping/check for optional
+        nothing.assertExists()?
+            .assertsStarts(with: "no")
+
+        something.assertExists()?
+            .assertsStarts(with: "some")
+
+        something.assertExists()?
+            .assertsStarts(with: "nope")
+
+        something.assertExists()?
+            .assertsStarts(with: "nope", "caller message")
 
         XCTAssertNil("one", "caller message")
         // "XCTAssertNil failed: "one" - caller message"

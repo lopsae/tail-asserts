@@ -13,7 +13,7 @@ extension Optional {
 
         // TODO: unwrap for printing
         Failure.trigger(message: """
-            self expected to be nil;
+            `self` expected to be nil;
             + self: \(String(describing: self))
             """,
             // TODO: this will cause empty messages
@@ -31,7 +31,7 @@ extension Optional {
             return self
         }
 
-        Failure.trigger(message: "`self` expected to exist",
+        Failure.trigger(message: "`self` expected to contain a value",
             // TODO: this will cause empty messages
             otherMessages: [message()],
             function: #function, file: file, line: line)
