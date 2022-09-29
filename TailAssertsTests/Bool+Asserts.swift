@@ -11,8 +11,8 @@ extension Bool {
     {
         if self == true { return }
 
-        Failure.trigger(
-            message: message(),
+        // TODO: received message should go to other messages?
+        Failure.trigger(message: message(),
             function: #function, file: file, line: line)
     }
 
@@ -23,8 +23,8 @@ extension Bool {
     {
         if self == false { return }
 
-        Failure.trigger(
-            message: message(),
+        // TODO: received message should go to other messages?
+        Failure.trigger(message: message(),
             function: #function, file: file, line: line)
     }
 

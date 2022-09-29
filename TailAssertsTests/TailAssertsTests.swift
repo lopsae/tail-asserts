@@ -37,16 +37,24 @@ class TailAssertsTests: XCTestCase {
     }
 
     func testExample() throws {
-        XCTAssert(true, "XCTAssert message")
+
         true.assertTrue()
         false.assertFalse()
 
-        false.assertTrue("some message")
-        // "XCTAssertTrue failed - XCTAssert message"
+        false.assertTrue("caller message")
 
-        XCTAssertNil(nil, "XCTAssertNil message")
-        XCTAssertNil("one", "XCTAssertNil message")
-        // "XCTAssertNil failed: "one" - XCTAssertNil message"
+        XCTAssert(false, "caller message")
+        // "XCTAssertTrue failed - caller message"
+
+        Optional<String>.none.assertNil()
+        Optional<String>.some("something")
+            .assertNil()
+
+        Optional<String>.some("something")
+            .assertNil("caller message")
+
+        XCTAssertNil("one", "caller message")
+        // "XCTAssertNil failed: "one" - caller message"
 
         XCTAssertTrue(true, "XCTAssertTrue message")
         // "XCTAssertTrue failed - XCTAssertTrue message"
