@@ -12,7 +12,12 @@ class XCTAssertPrintsTests: XCTestCase {
     ///
     /// Does not actually run any tests.
     func testExamplePrints() throws {
-        throw XCTSkip()
+        let options = XCTExpectedFailure.Options()
+        options.issueMatcher = { issue in
+            return issue.type == .assertionFailure
+        }
+
+        XCTExpectFailure(options: options)
 
         XCTFail("test message")
         // prints: failed - test message
