@@ -22,17 +22,22 @@ class TestingAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         let configuration = connectingSceneSession.configuration
         configuration.delegateClass = TestingSceneDelegate.self
-        print("🧪 Testing Scene configuration created")
+
+        let nameString = configuration.name ?? "no-name"
+        let delegateString = configuration.delegateClass.map(String.init(describing:)) ?? "no-delegate"
+        print("🧪 Scene configuration modified: name:\(nameString) delegate:\(delegateString)")
+        
         return configuration
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         let scenesInfo = sceneSessions.map {
             session -> String in
-            let delegateString = session.configuration.delegateClass != nil
-                ? String(describing: session.configuration.delegateClass!)
-                : "no-delegate"
-            return "id:\(session.persistentIdentifier) delegate:\(delegateString)"
+            let configuration = session.configuration
+            let nameString = configuration.name ?? "no-name"
+            let delegateString = configuration.delegateClass.map(String.init(describing:))
+                ?? "no-delegate"
+            return "id:\(session.persistentIdentifier) name:\(nameString) delegate:\(delegateString)"
         }
         print("🗑 Discarded scene sessions: \(scenesInfo)")
     }
