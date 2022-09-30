@@ -3,6 +3,7 @@
 //
 
 
+@testable import TailAsserts
 import UIKit
 
 
@@ -22,22 +23,15 @@ class TestingAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         let configuration = connectingSceneSession.configuration
         configuration.delegateClass = TestingSceneDelegate.self
+        print("🧪 Scene configuration modified: \(LogUtils.details(for: configuration))")
 
-        let nameString = configuration.name ?? "no-name"
-        let delegateString = configuration.delegateClass.map(String.init(describing:)) ?? "no-delegate"
-        print("🧪 Scene configuration modified: name:\(nameString) delegate:\(delegateString)")
-        
         return configuration
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         let scenesInfo = sceneSessions.map {
             session -> String in
-            let configuration = session.configuration
-            let nameString = configuration.name ?? "no-name"
-            let delegateString = configuration.delegateClass.map(String.init(describing:))
-                ?? "no-delegate"
-            return "id:\(session.persistentIdentifier) name:\(nameString) delegate:\(delegateString)"
+            return "id:\(session.persistentIdentifier) \(LogUtils.details(for: session.configuration))"
         }
         print("🗑 Discarded scene sessions: \(scenesInfo)")
     }

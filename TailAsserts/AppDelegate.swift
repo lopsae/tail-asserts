@@ -31,21 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // https://hacknicity.medium.com/how-to-switch-your-ios-app-and-scene-delegates-for-improved-testing-9746279378c3
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         let configuration = connectingSceneSession.configuration
-
-        let nameString = configuration.name.describe(or:"no-name")
-        let delegateString = configuration.delegateClass.describe(or: "no-delegate")
-        print("✅ Scene configuration forwarded: name:\(nameString) delegate:\(delegateString)")
-
+        print("✅ Scene configuration forwarded: \(LogUtils.details(for: configuration))")
         return configuration
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         let scenesInfo = sceneSessions.map {
             session -> String in
-            let configuration = session.configuration
-            let nameString = configuration.name.describe(or: "no-name")
-            let delegateString = configuration.delegateClass.describe(or: "no-delegate")
-            return "id:\(session.persistentIdentifier) name:\(nameString) delegate:\(delegateString)"
+            return "id:\(session.persistentIdentifier) \(LogUtils.details(for: session.configuration))"
         }
         print("🗑 Discarded scene sessions: \(scenesInfo)")
     }
