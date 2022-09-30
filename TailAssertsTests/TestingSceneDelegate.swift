@@ -19,12 +19,14 @@ class TestingSceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let label = UILabel()
-        label.text = "🤖 Testing 🤖"
+        label.text = "TailAsserts\n🤖 Testing 🤖"
+        label.numberOfLines = 0
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         let controller = UIViewController()
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         controller.view.addSubview(label)
-        controller.view.backgroundColor = .purple
+        controller.view.backgroundColor = .orange
 
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: controller.view.centerXAnchor),
