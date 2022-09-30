@@ -23,7 +23,7 @@ class TestingAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         let configuration = connectingSceneSession.configuration
         configuration.delegateClass = TestingSceneDelegate.self
-        print("🧪 Scene configuration modified: \(LogUtils.details(for: configuration))")
+        print("🧪 Scene configuration modified: \(configuration.logger.details)")
 
         return configuration
     }
@@ -31,7 +31,7 @@ class TestingAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         let scenesInfo = sceneSessions.map {
             session -> String in
-            return "id:\(session.persistentIdentifier) \(LogUtils.details(for: session.configuration))"
+            return "id:\(session.persistentIdentifier) \(session.configuration.logger.details)"
         }
         print("🗑 Discarded scene sessions: \(scenesInfo)")
     }
