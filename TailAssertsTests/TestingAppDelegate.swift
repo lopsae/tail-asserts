@@ -1,19 +1,18 @@
 //
-//  TailAsserts
+//  TailAssertsTests
 //
 
 
 import UIKit
 
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class TestingAppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
     -> Bool {
-        print("✴️ Open Session: \(application.openSessions)")
-        print("✅ Application did finish launching")
+        print("🧪 Testing Application did finish launching")
         return true
     }
 
@@ -21,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         let configuration = connectingSceneSession.configuration
-        configuration.delegateClass = SceneDelegate.self
-        print("✅ Scene configuration created")
+        configuration.delegateClass = TestingSceneDelegate.self
+        print("🧪 Testing Scene configuration created")
         return configuration
     }
 
@@ -32,7 +31,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
         print("🗑 Discarded scene sessions: \(sceneSessions)")
     }
-
-
 }
 

@@ -13,6 +13,9 @@
 		2D02896328E4D31200D2589A /* Optional+Asserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02896228E4D31200D2589A /* Optional+Asserts.swift */; };
 		2D02896528E60F1000D2589A /* String+Asserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02896428E60F1000D2589A /* String+Asserts.swift */; };
 		2D02896728E61DA100D2589A /* XCTAssertPrintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02896628E61DA100D2589A /* XCTAssertPrintsTests.swift */; };
+		2D02896928E6249800D2589A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02896828E6249800D2589A /* main.swift */; };
+		2D02896B28E6265800D2589A /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02896A28E6265800D2589A /* TestingAppDelegate.swift */; };
+		2D02896D28E6384600D2589A /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02896C28E6384600D2589A /* TestingSceneDelegate.swift */; };
 		2D714F6D2832BA01000029AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D714F6C2832BA01000029AA /* AppDelegate.swift */; };
 		2D714F6F2832BA01000029AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D714F6E2832BA01000029AA /* SceneDelegate.swift */; };
 		2D714F712832BA01000029AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D714F702832BA01000029AA /* ViewController.swift */; };
@@ -47,6 +50,9 @@
 		2D02896228E4D31200D2589A /* Optional+Asserts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Asserts.swift"; sourceTree = "<group>"; };
 		2D02896428E60F1000D2589A /* String+Asserts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Asserts.swift"; sourceTree = "<group>"; };
 		2D02896628E61DA100D2589A /* XCTAssertPrintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTAssertPrintsTests.swift; sourceTree = "<group>"; };
+		2D02896828E6249800D2589A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2D02896A28E6265800D2589A /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
+		2D02896C28E6384600D2589A /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
 		2D714F692832BA01000029AA /* TailAsserts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TailAsserts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D714F6C2832BA01000029AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D714F6E2832BA01000029AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 		2D714F6B2832BA01000029AA /* TailAsserts */ = {
 			isa = PBXGroup;
 			children = (
+				2D02896828E6249800D2589A /* main.swift */,
 				2D714F6C2832BA01000029AA /* AppDelegate.swift */,
 				2D714F6E2832BA01000029AA /* SceneDelegate.swift */,
 				2D714F702832BA01000029AA /* ViewController.swift */,
@@ -122,6 +129,8 @@
 		2D714F822832BA02000029AA /* TailAssertsTests */ = {
 			isa = PBXGroup;
 			children = (
+				2D02896A28E6265800D2589A /* TestingAppDelegate.swift */,
+				2D02896C28E6384600D2589A /* TestingSceneDelegate.swift */,
 				2D02895C28E4C1BE00D2589A /* Failure.swift */,
 				2D02896028E4C99000D2589A /* ClosureTypes.swift */,
 				2D02895E28E4C93F00D2589A /* Bool+Asserts.swift */,
@@ -274,6 +283,7 @@
 			files = (
 				2D714F712832BA01000029AA /* ViewController.swift in Sources */,
 				2D714F6D2832BA01000029AA /* AppDelegate.swift in Sources */,
+				2D02896928E6249800D2589A /* main.swift in Sources */,
 				2D714F6F2832BA01000029AA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +297,8 @@
 				2D02896328E4D31200D2589A /* Optional+Asserts.swift in Sources */,
 				2D02896728E61DA100D2589A /* XCTAssertPrintsTests.swift in Sources */,
 				2D714F842832BA02000029AA /* TailAssertsTests.swift in Sources */,
+				2D02896B28E6265800D2589A /* TestingAppDelegate.swift in Sources */,
+				2D02896D28E6384600D2589A /* TestingSceneDelegate.swift in Sources */,
 				2D02895F28E4C93F00D2589A /* Bool+Asserts.swift in Sources */,
 				2D02896128E4C99000D2589A /* ClosureTypes.swift in Sources */,
 			);

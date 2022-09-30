@@ -1,12 +1,12 @@
 //
-//  TailAsserts
+//  TailAssertsTests
 //
 
 
 import UIKit
 
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class TestingSceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
@@ -15,11 +15,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions)
     {
-        print("✅ Will connect to scene session")
+        print("🧪 Will connect to testing scene session")
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
+        let label = UILabel()
+        label.text = "🤖 Testing 🤖"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        let controller = UIViewController()
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        controller.view.addSubview(label)
+        controller.view.backgroundColor = .purple
+
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: controller.view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: controller.view.centerYAnchor)
+        ])
+
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ViewController()
+        window.rootViewController = controller
 
         self.window = window
         window.makeKeyAndVisible()
