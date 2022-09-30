@@ -12,6 +12,7 @@ class TestingAppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
     -> Bool {
+        print("🧪 Open Session: \(application.openSessions)")
         print("🧪 Testing Application did finish launching")
         return true
     }
@@ -26,10 +27,14 @@ class TestingAppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-        print("🗑 Discarded scene sessions: \(sceneSessions)")
+        let scenesInfo = sceneSessions.map {
+            session -> String in
+            let delegateString = session.configuration.delegateClass != nil
+                ? String(describing: session.configuration.delegateClass!)
+                : "no-delegate"
+            return "id:\(session.persistentIdentifier) delegate:\(delegateString)"
+        }
+        print("🗑 Discarded scene sessions: \(scenesInfo)")
     }
 }
 

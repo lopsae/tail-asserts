@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: UISceneSession Lifecycle
 
+    // Deleting the scene configuration in `info.plist` seems to force the
+    // `UISceneSession` to be recreated in every launch. Some launches also
+    // seem to dispose of the older session.
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         let configuration = connectingSceneSession.configuration
         configuration.delegateClass = SceneDelegate.self
@@ -27,10 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-        print("🗑 Discarded scene sessions: \(sceneSessions)")
+        let scenesInfo = sceneSessions.map {
+            session -> String in
+            let delegateString = session.configuration.delegateClass != nil
+                ? String(describing: session.configuration.delegateClass!)
+                : "no-delegate"
+            return "id:\(session.persistentIdentifier) delegate:\(delegateString)"
+        }
+        print("🗑 Discarded scene sessions: \(scenesInfo)")
     }
 
 
