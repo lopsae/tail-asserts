@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
 
     // Deleting the scene configuration in `info.plist` seems to force the
     // `UISceneSession` to be recreated in every launch. Some launches also
@@ -33,9 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         let configuration = connectingSceneSession.configuration
 
-        let nameString = configuration.name ?? "no-name"
-        let delegateString = configuration.delegateClass.map(String.init(describing:)) ?? "no-delegate"
-        print("✅ Scene configuration passed: name:\(nameString) delegate:\(delegateString)")
+        let nameString = configuration.name.describe(or:"no-name")
+        let delegateString = configuration.delegateClass.describe(or: "no-delegate")
+        print("✅ Scene configuration forwarded: name:\(nameString) delegate:\(delegateString)")
 
         return configuration
     }
@@ -44,9 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let scenesInfo = sceneSessions.map {
             session -> String in
             let configuration = session.configuration
-            let nameString = configuration.name ?? "no-name"
-            let delegateString = configuration.delegateClass.map(String.init(describing:))
-                ?? "no-delegate"
+            let nameString = configuration.name.describe(or: "no-name")
+            let delegateString = configuration.delegateClass.describe(or: "no-delegate")
             return "id:\(session.persistentIdentifier) name:\(nameString) delegate:\(delegateString)"
         }
         print("🗑 Discarded scene sessions: \(scenesInfo)")
