@@ -96,6 +96,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D02897428E7B78200D2589A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2D02896A28E6265800D2589A /* TestingAppDelegate.swift */,
+				2D02896C28E6384600D2589A /* TestingSceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2D02897528E7B7A700D2589A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2D714F6C2832BA01000029AA /* AppDelegate.swift */,
+				2D714F6E2832BA01000029AA /* SceneDelegate.swift */,
+				2D714F772832BA02000029AA /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2D02897628E7B80900D2589A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2D02896E28E7A8C700D2589A /* Optional+Extensions.swift */,
+				2D02897028E7ACA700D2589A /* UISceneConfiguration+Logger.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2D714F602832BA01000029AA = {
 			isa = PBXGroup;
 			children = (
@@ -119,14 +147,11 @@
 		2D714F6B2832BA01000029AA /* TailAsserts */ = {
 			isa = PBXGroup;
 			children = (
-				2D02896828E6249800D2589A /* main.swift */,
-				2D714F6C2832BA01000029AA /* AppDelegate.swift */,
-				2D02896E28E7A8C700D2589A /* Optional+Extensions.swift */,
-				2D714F6E2832BA01000029AA /* SceneDelegate.swift */,
+				2D02897528E7B7A700D2589A /* App */,
+				2D02897628E7B80900D2589A /* Extensions */,
 				2D714F702832BA01000029AA /* ViewController.swift */,
-				2D02897028E7ACA700D2589A /* UISceneConfiguration+Logger.swift */,
+				2D02896828E6249800D2589A /* main.swift */,
 				2D714F752832BA02000029AA /* Assets.xcassets */,
-				2D714F772832BA02000029AA /* LaunchScreen.storyboard */,
 				2D714F7A2832BA02000029AA /* Info.plist */,
 			);
 			path = TailAsserts;
@@ -135,8 +160,7 @@
 		2D714F822832BA02000029AA /* TailAssertsTests */ = {
 			isa = PBXGroup;
 			children = (
-				2D02896A28E6265800D2589A /* TestingAppDelegate.swift */,
-				2D02896C28E6384600D2589A /* TestingSceneDelegate.swift */,
+				2D02897428E7B78200D2589A /* App */,
 				2D02895C28E4C1BE00D2589A /* Failure.swift */,
 				2D02896028E4C99000D2589A /* ClosureTypes.swift */,
 				2D02895E28E4C93F00D2589A /* Bool+Asserts.swift */,
