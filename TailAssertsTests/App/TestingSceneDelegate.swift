@@ -10,6 +10,15 @@ class TestingSceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    override init() {
+        super.init()
+
+        guard UIApplication.shared.delegate is TestingAppDelegate else {
+            fatalError("Expected TestingAppDelegate")
+        }
+
+    }
+
     func scene(
         _ scene: UIScene,
         willConnectTo session: UISceneSession,
