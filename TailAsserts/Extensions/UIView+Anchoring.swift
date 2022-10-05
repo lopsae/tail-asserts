@@ -17,47 +17,52 @@ struct Anchoring {
 
     let view: UIView
 
-    func topY(toSafe harbor: UIView) {
-        topY(to: harbor.safeAreaLayoutGuide.topAnchor)
+    func top(toSafe harbor: UIView) {
+        top(to: harbor.safeAreaLayoutGuide.topAnchor)
     }
 
-    func topY(to anchor: NSLayoutYAxisAnchor) {
+    func top(to anchor: NSLayoutYAxisAnchor) {
         view.topAnchor.constraint(equalTo: anchor)
             .isActive = true
     }
 
-    func bottomY(toSafe harbor: UIView) {
-        bottomY(to: harbor.safeAreaLayoutGuide.bottomAnchor)
+    func bottom(toSafe harbor: UIView) {
+        bottom(to: harbor.safeAreaLayoutGuide.bottomAnchor)
     }
 
-    func bottomY(to anchor: NSLayoutYAxisAnchor) {
+    func bottom(to anchor: NSLayoutYAxisAnchor) {
         view.bottomAnchor.constraint(equalTo: anchor)
             .isActive = true
     }
 
-    func centerX(to harbor: UIView) {
-        centerX(to: harbor.centerXAnchor)
+
+    // Middle reffers to the centerX, center from side to side.
+
+    func middle(to harbor: UIView) {
+        middle(to: harbor.centerXAnchor)
     }
 
-    func centerX(toSafe harbor: UIView) {
-        centerX(to: harbor.safeAreaLayoutGuide.centerXAnchor)
+    func middle(toSafe harbor: UIView) {
+        middle(to: harbor.safeAreaLayoutGuide.centerXAnchor)
     }
 
-    func centerX(to anchor: NSLayoutXAxisAnchor) {
+    func middle(to anchor: NSLayoutXAxisAnchor) {
         view.centerXAnchor.constraint(equalTo: anchor)
             .isActive = true
     }
 
 
-    func centerY(to harbor: UIView) {
-        centerY(to: harbor.centerYAnchor)
+    // Median reffers to the centerY, from the typographical median from top to bottom
+
+    func median(to harbor: UIView) {
+        median(to: harbor.centerYAnchor)
     }
 
-    func centerY(toSafe harbor: UIView) {
-        centerY(to: harbor.safeAreaLayoutGuide.centerYAnchor)
+    func median(toSafe harbor: UIView) {
+        median(to: harbor.safeAreaLayoutGuide.centerYAnchor)
     }
 
-    func centerY(to anchor: NSLayoutYAxisAnchor) {
+    func median(to anchor: NSLayoutYAxisAnchor) {
         view.centerYAnchor.constraint(equalTo: anchor)
             .isActive = true
     }

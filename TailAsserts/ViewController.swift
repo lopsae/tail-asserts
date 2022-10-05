@@ -20,8 +20,8 @@ class ViewController: UIViewController {
             label.textAlignment = .center
 
             label.translatesAutoresizingMaskIntoConstraints = false
-            label.anchoring.centerX(toSafe: view)
-            label.anchoring.centerY(toSafe: view)
+            label.anchoring.middle(toSafe: view)
+            label.anchoring.median(toSafe: view)
         }
 
         view.setupSubview(UILabel()) { label in
@@ -29,8 +29,8 @@ class ViewController: UIViewController {
             label.textAlignment = .center
 
             label.translatesAutoresizingMaskIntoConstraints = false
-            label.anchoring.centerX(to: view)
-            label.anchoring.topY(toSafe: view)
+            label.anchoring.middle(to: view)
+            label.anchoring.top(toSafe: view)
         }
 
         view.setupSubview(UILabel()) { label in
@@ -38,8 +38,8 @@ class ViewController: UIViewController {
             label.textAlignment = .center
 
             label.translatesAutoresizingMaskIntoConstraints = false
-            label.anchoring.centerX(to: view)
-            label.anchoring.bottomY(toSafe: view)
+            label.anchoring.middle(to: view)
+            label.anchoring.bottom(toSafe: view)
         }
     }
 
