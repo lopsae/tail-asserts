@@ -24,20 +24,17 @@ class ViewController: UIViewController {
             label.numberOfLines = 0
             label.textAlignment = .center
 
-            label.translatesAutoresizingMaskIntoConstraints = false
             label.anchoring.center(toSafe: view)
         }
 
         // Around title labels
 
         view.setupSubview(UILabel(text: "above")) { label in
-            label.translatesAutoresizingMaskIntoConstraints = false
             label.anchoring.above(centerLabel, padding: 10)
             label.anchoring.middle(to: centerLabel)
         }
 
         view.setupSubview(UILabel(text: "below")) { label in
-            label.translatesAutoresizingMaskIntoConstraints = false
             label.anchoring.below(centerLabel, padding: 10)
             label.anchoring.middle(to: centerLabel)
         }
@@ -50,7 +47,6 @@ class ViewController: UIViewController {
             label.textAlignment = .center
 //            label.transform = CGAffineTransform(rotationAngle: -.pi/2)
 
-            label.translatesAutoresizingMaskIntoConstraints = false
             label.anchoring.median(toSafe: view)
             label.anchoring.lead(toSafe: view, inset: 10)
         }
@@ -60,7 +56,6 @@ class ViewController: UIViewController {
             label.textAlignment = .center
 //            label.transform = CGAffineTransform(rotationAngle: -.pi/2)
 
-            label.translatesAutoresizingMaskIntoConstraints = false
             label.anchoring.median(toSafe: view)
             label.anchoring.trail(toSafe: view, inset: 10)
         }
@@ -69,7 +64,6 @@ class ViewController: UIViewController {
             label.text = "top label"
             label.textAlignment = .center
 
-            label.translatesAutoresizingMaskIntoConstraints = false
             label.anchoring.middle(to: view)
             label.anchoring.top(toSafe: view)
         }
@@ -78,7 +72,6 @@ class ViewController: UIViewController {
             label.text = "bottom label"
             label.textAlignment = .center
 
-            label.translatesAutoresizingMaskIntoConstraints = false
             label.anchoring.middle(to: view)
             label.anchoring.bottom(toSafe: view)
         }

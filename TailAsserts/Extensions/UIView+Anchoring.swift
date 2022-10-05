@@ -8,7 +8,10 @@ import UIKit
 
 extension UIView {
 
-    var anchoring: Anchoring { Anchoring(view: self) }
+    var anchoring: Anchoring {
+        translatesAutoresizingMaskIntoConstraints = false
+        return Anchoring(view: self)
+    }
 
 }
 
