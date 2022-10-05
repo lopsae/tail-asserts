@@ -10,6 +10,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // A light gray
         view.backgroundColor = .init(hue: 0, saturation: 0, brightness: 0.9, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -21,10 +22,8 @@ class ViewController: UIViewController {
 
         view.addSubview(label)
 
-        NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
+        label.anchoring.centerX(to: view)
+        label.anchoring.centerY(to: view)
     }
 
 
