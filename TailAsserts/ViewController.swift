@@ -14,14 +14,17 @@ class ViewController: UIViewController {
         view.backgroundColor = .init(hue: 0, saturation: 0, brightness: 0.9, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
 
+        // TODO: Trailing setup?
+//        UILabel().setupAdd(to: view) { label in
+//        }
+
         view.setupSubview(UILabel()) { label in
             label.text = "TailAsserts\n▶️ Running ▶️"
             label.numberOfLines = 0
             label.textAlignment = .center
 
             label.translatesAutoresizingMaskIntoConstraints = false
-            label.anchoring.middle(toSafe: view)
-            label.anchoring.median(toSafe: view)
+            label.anchoring.center(toSafe: view)
         }
 
         view.setupSubview(UILabel()) { label in

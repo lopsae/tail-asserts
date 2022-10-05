@@ -53,6 +53,11 @@ struct Anchoring {
             .isActive = true
     }
 
+    func center(toSafe harbor: UIView) {
+        middle(toSafe: harbor)
+        median(toSafe: harbor)
+    }
+
 
     // Middle reffers to the centerX, center from side to side.
 
