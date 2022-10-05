@@ -20,40 +20,52 @@ struct Anchoring {
 
     let view: UIView
 
-    func lead(toSafe harbor: UIView, inset: CGFloat = 0) {
-        lead(to: harbor.safeAreaLayoutGuide.leadingAnchor, inset: inset)
+    @discardableResult
+    func lead(toSafe harbor: UIView, inset: CGFloat = 0) -> Anchoring {
+        return lead(to: harbor.safeAreaLayoutGuide.leadingAnchor, inset: inset)
     }
 
-    func lead(to anchor: NSLayoutXAxisAnchor, inset: CGFloat = 0) {
+    @discardableResult
+    func lead(to anchor: NSLayoutXAxisAnchor, inset: CGFloat = 0) -> Anchoring {
         view.leadingAnchor.constraint(equalTo: anchor, constant: inset)
             .isActive = true
+        return self
     }
 
-    func trail(toSafe harbor: UIView, inset: CGFloat = 0) {
-        trail(to: harbor.safeAreaLayoutGuide.trailingAnchor, inset: inset)
+    @discardableResult
+    func trail(toSafe harbor: UIView, inset: CGFloat = 0) -> Anchoring {
+        return trail(to: harbor.safeAreaLayoutGuide.trailingAnchor, inset: inset)
     }
 
-    func trail(to anchor: NSLayoutXAxisAnchor, inset: CGFloat = 0) {
+    @discardableResult
+    func trail(to anchor: NSLayoutXAxisAnchor, inset: CGFloat = 0) -> Anchoring {
         view.trailingAnchor.constraint(equalTo: anchor, constant: -inset)
             .isActive = true
+        return self
     }
 
-    func top(toSafe harbor: UIView) {
-        top(to: harbor.safeAreaLayoutGuide.topAnchor)
+    @discardableResult
+    func top(toSafe harbor: UIView) -> Anchoring {
+        return top(to: harbor.safeAreaLayoutGuide.topAnchor)
     }
 
-    func top(to anchor: NSLayoutYAxisAnchor) {
+    @discardableResult
+    func top(to anchor: NSLayoutYAxisAnchor) -> Anchoring {
         view.topAnchor.constraint(equalTo: anchor)
             .isActive = true
+        return self
     }
 
-    func bottom(toSafe harbor: UIView) {
-        bottom(to: harbor.safeAreaLayoutGuide.bottomAnchor)
+    @discardableResult
+    func bottom(toSafe harbor: UIView) -> Anchoring {
+        return bottom(to: harbor.safeAreaLayoutGuide.bottomAnchor)
     }
 
-    func bottom(to anchor: NSLayoutYAxisAnchor) {
+    @discardableResult
+    func bottom(to anchor: NSLayoutYAxisAnchor) -> Anchoring {
         view.bottomAnchor.constraint(equalTo: anchor)
             .isActive = true
+        return self
     }
 
     @discardableResult

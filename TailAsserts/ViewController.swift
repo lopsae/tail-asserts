@@ -58,8 +58,9 @@ class ViewController: UIViewController {
             label.textAlignment = .center
 //            label.transform = CGAffineTransform(rotationAngle: -.pi/2)
 
-            label.anchoring.median(toSafe: view)
-            label.anchoring.lead(toSafe: view, inset: 10)
+            label.anchoring
+                .lead(toSafe: view, inset: 10)
+                .median(toSafe: view)
         }
 
         view.setupSubview(UILabel()) { label in
@@ -67,24 +68,27 @@ class ViewController: UIViewController {
             label.textAlignment = .center
 //            label.transform = CGAffineTransform(rotationAngle: -.pi/2)
 
-            label.anchoring.median(toSafe: view)
-            label.anchoring.trail(toSafe: view, inset: 10)
+            label.anchoring
+                .trail(toSafe: view, inset: 10)
+                .median(toSafe: view)
         }
 
         view.setupSubview(UILabel()) { label in
             label.text = "top label"
             label.textAlignment = .center
 
-            label.anchoring.middle(to: view)
-            label.anchoring.top(toSafe: view)
+            label.anchoring
+                .middle(to: view)
+                .top(toSafe: view)
         }
 
         view.setupSubview(UILabel()) { label in
             label.text = "bottom label"
             label.textAlignment = .center
 
-            label.anchoring.middle(to: view)
-            label.anchoring.bottom(toSafe: view)
+            label.anchoring
+                .middle(to: view)
+                .bottom(toSafe: view)
         }
     }
 
