@@ -14,16 +14,15 @@ class ViewController: UIViewController {
         view.backgroundColor = .init(hue: 0, saturation: 0, brightness: 0.9, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
 
-        let label = UILabel()
-        label.text = "TailAsserts\n▶️ Running ▶️"
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
+        view.setupSubview(UILabel()) { label in
+            label.text = "TailAsserts\n▶️ Running ▶️"
+            label.numberOfLines = 0
+            label.textAlignment = .center
 
-        view.addSubview(label)
-
-        label.anchoring.centerX(to: view)
-        label.anchoring.centerY(to: view)
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.anchoring.centerX(to: view)
+            label.anchoring.centerY(to: view)
+        }
     }
 
 
