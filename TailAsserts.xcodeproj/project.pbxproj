@@ -22,6 +22,7 @@
 		2D02897A28E7BA3F00D2589A /* Any+Asserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D02897928E7BA3F00D2589A /* Any+Asserts.swift */; };
 		2D4B81A128EDF96500416AF5 /* UIView+Anchoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B81A028EDF96500416AF5 /* UIView+Anchoring.swift */; };
 		2D4B81A328EDFC5B00416AF5 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B81A228EDFC5B00416AF5 /* UIView+Extensions.swift */; };
+		2D4B81A528EE195100416AF5 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B81A428EE195100416AF5 /* UILabel+Extensions.swift */; };
 		2D714F6D2832BA01000029AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D714F6C2832BA01000029AA /* AppDelegate.swift */; };
 		2D714F6F2832BA01000029AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D714F6E2832BA01000029AA /* SceneDelegate.swift */; };
 		2D714F712832BA01000029AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D714F702832BA01000029AA /* ViewController.swift */; };
@@ -65,6 +66,7 @@
 		2D02897928E7BA3F00D2589A /* Any+Asserts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Any+Asserts.swift"; sourceTree = "<group>"; };
 		2D4B81A028EDF96500416AF5 /* UIView+Anchoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchoring.swift"; sourceTree = "<group>"; };
 		2D4B81A228EDFC5B00416AF5 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		2D4B81A428EE195100416AF5 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		2D714F692832BA01000029AA /* TailAsserts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TailAsserts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D714F6C2832BA01000029AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D714F6E2832BA01000029AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				2D02897028E7ACA700D2589A /* UISceneConfiguration+Logger.swift */,
 				2D4B81A028EDF96500416AF5 /* UIView+Anchoring.swift */,
 				2D4B81A228EDFC5B00416AF5 /* UIView+Extensions.swift */,
+				2D4B81A428EE195100416AF5 /* UILabel+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				2D4B81A128EDF96500416AF5 /* UIView+Anchoring.swift in Sources */,
 				2D714F712832BA01000029AA /* ViewController.swift in Sources */,
 				2D02896F28E7A8C700D2589A /* Optional+Extensions.swift in Sources */,
+				2D4B81A528EE195100416AF5 /* UILabel+Extensions.swift in Sources */,
 				2D714F6D2832BA01000029AA /* AppDelegate.swift in Sources */,
 				2D02896928E6249800D2589A /* main.swift in Sources */,
 				2D02897128E7ACA700D2589A /* UISceneConfiguration+Logger.swift in Sources */,

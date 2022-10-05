@@ -18,7 +18,8 @@ class ViewController: UIViewController {
 //        UILabel().setupAdd(to: view) { label in
 //        }
 
-        view.setupSubview(UILabel()) { label in
+        let centerLabel = view.setupSubview(UILabel()) {
+            label in
             label.text = "TailAsserts\n▶️ Running ▶️"
             label.numberOfLines = 0
             label.textAlignment = .center
@@ -26,6 +27,23 @@ class ViewController: UIViewController {
             label.translatesAutoresizingMaskIntoConstraints = false
             label.anchoring.center(toSafe: view)
         }
+
+        // Around title labels
+
+        view.setupSubview(UILabel(text: "above")) { label in
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.anchoring.above(centerLabel, padding: 10)
+            label.anchoring.middle(to: centerLabel)
+        }
+
+        view.setupSubview(UILabel(text: "below")) { label in
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.anchoring.below(centerLabel, padding: 10)
+            label.anchoring.middle(to: centerLabel)
+        }
+
+
+        // Safe layout labels
 
         view.setupSubview(UILabel()) { label in
             label.text = "lead"

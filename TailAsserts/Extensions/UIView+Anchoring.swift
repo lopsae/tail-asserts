@@ -91,3 +91,27 @@ struct Anchoring {
     }
 
 }
+
+
+// MARK: - Surrounding
+extension Anchoring {
+
+    func above(_ view: UIView, padding: CGFloat = 0) {
+        above(anchor: view.topAnchor, padding: padding)
+    }
+
+    func above(anchor: NSLayoutYAxisAnchor, padding: CGFloat = 0) {
+        view.bottomAnchor.constraint(equalTo: anchor, constant: -padding)
+            .isActive = true
+    }
+
+    func below(_ view: UIView, padding: CGFloat = 0) {
+        below(anchor: view.bottomAnchor, padding: padding)
+    }
+
+    func below(anchor: NSLayoutYAxisAnchor, padding: CGFloat = 0) {
+        view.topAnchor.constraint(equalTo: anchor, constant: padding)
+            .isActive = true
+    }
+
+}

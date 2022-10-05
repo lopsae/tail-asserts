@@ -8,9 +8,12 @@ import UIKit
 
 extension UIView {
 
-    func setupSubview<V>(_ subview: V, configure: (V) -> Void) where V: UIView {
+    @discardableResult
+    func setupSubview<V>(_ subview: V, configure: (V) -> Void) -> V
+    where V: UIView {
         addSubview(subview)
         configure(subview)
+        return subview
     }
 
 }
