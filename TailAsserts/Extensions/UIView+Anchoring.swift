@@ -17,6 +17,24 @@ struct Anchoring {
 
     let view: UIView
 
+    func lead(toSafe harbor: UIView, inset: CGFloat = 0) {
+        lead(to: harbor.safeAreaLayoutGuide.leadingAnchor, inset: inset)
+    }
+
+    func lead(to anchor: NSLayoutXAxisAnchor, inset: CGFloat = 0) {
+        view.leadingAnchor.constraint(equalTo: anchor, constant: inset)
+            .isActive = true
+    }
+
+    func trail(toSafe harbor: UIView, inset: CGFloat = 0) {
+        trail(to: harbor.safeAreaLayoutGuide.trailingAnchor, inset: inset)
+    }
+
+    func trail(to anchor: NSLayoutXAxisAnchor, inset: CGFloat = 0) {
+        view.trailingAnchor.constraint(equalTo: anchor, constant: -inset)
+            .isActive = true
+    }
+
     func top(toSafe harbor: UIView) {
         top(to: harbor.safeAreaLayoutGuide.topAnchor)
     }

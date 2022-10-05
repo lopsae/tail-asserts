@@ -25,6 +25,26 @@ class ViewController: UIViewController {
         }
 
         view.setupSubview(UILabel()) { label in
+            label.text = "lead"
+            label.textAlignment = .center
+//            label.transform = CGAffineTransform(rotationAngle: -.pi/2)
+
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.anchoring.median(toSafe: view)
+            label.anchoring.lead(toSafe: view, inset: 10)
+        }
+
+        view.setupSubview(UILabel()) { label in
+            label.text = "trail"
+            label.textAlignment = .center
+//            label.transform = CGAffineTransform(rotationAngle: -.pi/2)
+
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.anchoring.median(toSafe: view)
+            label.anchoring.trail(toSafe: view, inset: 10)
+        }
+
+        view.setupSubview(UILabel()) { label in
             label.text = "top label"
             label.textAlignment = .center
 
