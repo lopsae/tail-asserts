@@ -56,41 +56,49 @@ struct Anchoring {
             .isActive = true
     }
 
-    func center(toSafe harbor: UIView) {
-        middle(toSafe: harbor)
-        median(toSafe: harbor)
+    @discardableResult
+    func center(toSafe harbor: UIView) -> Anchoring {
+        return middle(toSafe: harbor).median(toSafe: harbor)
     }
 
 
     // Middle reffers to the centerX, center from side to side.
 
-    func middle(to harbor: UIView) {
-        middle(to: harbor.centerXAnchor)
+    @discardableResult
+    func middle(to harbor: UIView) -> Anchoring {
+        return middle(to: harbor.centerXAnchor)
     }
 
-    func middle(toSafe harbor: UIView) {
-        middle(to: harbor.safeAreaLayoutGuide.centerXAnchor)
+    @discardableResult
+    func middle(toSafe harbor: UIView) -> Anchoring {
+        return middle(to: harbor.safeAreaLayoutGuide.centerXAnchor)
     }
 
-    func middle(to anchor: NSLayoutXAxisAnchor) {
+    @discardableResult
+    func middle(to anchor: NSLayoutXAxisAnchor) -> Anchoring {
         view.centerXAnchor.constraint(equalTo: anchor)
             .isActive = true
+        return self
     }
 
 
     // Median reffers to the centerY, from the typographical median from top to bottom
 
-    func median(to harbor: UIView) {
-        median(to: harbor.centerYAnchor)
+    @discardableResult
+    func median(to harbor: UIView) -> Anchoring {
+        return median(to: harbor.centerYAnchor)
     }
 
-    func median(toSafe harbor: UIView) {
-        median(to: harbor.safeAreaLayoutGuide.centerYAnchor)
+    @discardableResult
+    func median(toSafe harbor: UIView) -> Anchoring {
+        return median(to: harbor.safeAreaLayoutGuide.centerYAnchor)
     }
 
-    func median(to anchor: NSLayoutYAxisAnchor) {
+    @discardableResult
+    func median(to anchor: NSLayoutYAxisAnchor) -> Anchoring {
         view.centerYAnchor.constraint(equalTo: anchor)
             .isActive = true
+        return self
     }
 
 }
