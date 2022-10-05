@@ -30,24 +30,27 @@ class ViewController: UIViewController {
         // Around title labels
 
         view.setupSubview(UILabel(text: "above")) { label in
-            label.anchoring.middle(to: centerLabel)
-            label.anchoring.above(centerLabel, padding: 10)
+            label.anchoring
+                .middle(to: centerLabel)
+                .above(centerLabel, padding: 10)
         }
 
         view.setupSubview(UILabel(text: "below")) { label in
-            label.anchoring.middle(to: centerLabel)
-            label.anchoring.below(centerLabel, padding: 10)
+            label.anchoring
+                .middle(to: centerLabel)
+                .below(centerLabel, padding: 10)
         }
 
         view.setupSubview(UILabel(text: "before")) { label in
-            label.anchoring.before(centerLabel, padding: 10)
-            label.anchoring.median(to: centerLabel)
-
+            label.anchoring
+                .before(centerLabel, padding: 10)
+                .median(to: centerLabel)
         }
 
         view.setupSubview(UILabel(text: "after")) { label in
-            label.anchoring.after(centerLabel, padding: 10)
-            label.anchoring.median(to: centerLabel)
+            label.anchoring
+                .after(centerLabel, padding: 10)
+                .median(to: centerLabel)
         }
 
 

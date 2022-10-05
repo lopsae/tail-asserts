@@ -119,40 +119,52 @@ struct Anchoring {
 // MARK: - Surrounding
 extension Anchoring {
 
-    func before(_ view: UIView, padding: CGFloat = 0) {
-        before(anchor: view.leadingAnchor, padding: padding)
+    @discardableResult
+    func before(_ view: UIView, padding: CGFloat = 0) -> Anchoring {
+        return before(anchor: view.leadingAnchor, padding: padding)
     }
 
-    func before(anchor: NSLayoutXAxisAnchor, padding: CGFloat = 0) {
+    @discardableResult
+    func before(anchor: NSLayoutXAxisAnchor, padding: CGFloat = 0) -> Anchoring {
         view.trailingAnchor.constraint(equalTo: anchor, constant: -padding)
             .isActive = true
+        return self
     }
 
-    func after(_ view: UIView, padding: CGFloat = 0) {
-        after(anchor: view.trailingAnchor, padding: padding)
+    @discardableResult
+    func after(_ view: UIView, padding: CGFloat = 0) -> Anchoring {
+        return after(anchor: view.trailingAnchor, padding: padding)
     }
 
-    func after(anchor: NSLayoutXAxisAnchor, padding: CGFloat = 0) {
+    @discardableResult
+    func after(anchor: NSLayoutXAxisAnchor, padding: CGFloat = 0) -> Anchoring {
         view.leadingAnchor.constraint(equalTo: anchor, constant: padding)
             .isActive = true
+        return self
     }
 
-    func above(_ view: UIView, padding: CGFloat = 0) {
-        above(anchor: view.topAnchor, padding: padding)
+    @discardableResult
+    func above(_ view: UIView, padding: CGFloat = 0) -> Anchoring {
+        return above(anchor: view.topAnchor, padding: padding)
     }
 
-    func above(anchor: NSLayoutYAxisAnchor, padding: CGFloat = 0) {
+    @discardableResult
+    func above(anchor: NSLayoutYAxisAnchor, padding: CGFloat = 0) -> Anchoring {
         view.bottomAnchor.constraint(equalTo: anchor, constant: -padding)
             .isActive = true
+        return self
     }
 
-    func below(_ view: UIView, padding: CGFloat = 0) {
-        below(anchor: view.bottomAnchor, padding: padding)
+    @discardableResult
+    func below(_ view: UIView, padding: CGFloat = 0) -> Anchoring {
+        return below(anchor: view.bottomAnchor, padding: padding)
     }
 
-    func below(anchor: NSLayoutYAxisAnchor, padding: CGFloat = 0) {
+    @discardableResult
+    func below(anchor: NSLayoutYAxisAnchor, padding: CGFloat = 0) -> Anchoring {
         view.topAnchor.constraint(equalTo: anchor, constant: padding)
             .isActive = true
+        return self
     }
 
 }
