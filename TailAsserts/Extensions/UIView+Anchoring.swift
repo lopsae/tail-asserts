@@ -168,3 +168,45 @@ extension Anchoring {
     }
 
 }
+
+
+// MARK: - Centered Combinations
+extension Anchoring {
+
+//    @discardableResult
+//    func centerTop
+
+    // centerTop
+    // middleTop
+    // topCenter
+
+    // leadCenter
+    // trailCenter
+
+    // beforeCenter
+    // afterCenter
+    // aboveCenter
+    // belowCenter
+
+}
+
+// MARK: - Corner Combinations
+extension Anchoring {
+
+    // topLead
+    // topTrail
+
+    // botomLead
+    // botomTrail
+
+    // aboveBefore
+    // aboveAfter
+
+    // belowBefore
+    // belowAfter
+
+    // beforeBelow
+    // afterBelow
+
+}
+
