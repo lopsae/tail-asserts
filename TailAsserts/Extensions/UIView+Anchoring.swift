@@ -99,6 +99,24 @@ struct Anchoring {
 // MARK: - Surrounding
 extension Anchoring {
 
+    func before(_ view: UIView, padding: CGFloat = 0) {
+        before(anchor: view.leadingAnchor, padding: padding)
+    }
+
+    func before(anchor: NSLayoutXAxisAnchor, padding: CGFloat = 0) {
+        view.trailingAnchor.constraint(equalTo: anchor, constant: -padding)
+            .isActive = true
+    }
+
+    func after(_ view: UIView, padding: CGFloat = 0) {
+        after(anchor: view.trailingAnchor, padding: padding)
+    }
+
+    func after(anchor: NSLayoutXAxisAnchor, padding: CGFloat = 0) {
+        view.leadingAnchor.constraint(equalTo: anchor, constant: padding)
+            .isActive = true
+    }
+
     func above(_ view: UIView, padding: CGFloat = 0) {
         above(anchor: view.topAnchor, padding: padding)
     }
