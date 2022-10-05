@@ -17,9 +17,26 @@ struct Anchoring {
 
     let view: UIView
 
-    func centerX(to harbor: UIView) {
-        view.centerXAnchor.constraint(equalTo: harbor.centerXAnchor)
+    func topY(toSafe harbor: UIView) {
+        topY(to: harbor.safeAreaLayoutGuide.topAnchor)
+    }
+
+    func topY(to anchor: NSLayoutYAxisAnchor) {
+        view.topAnchor.constraint(equalTo: anchor)
             .isActive = true
+    }
+
+    func bottomY(toSafe harbor: UIView) {
+        bottomY(to: harbor.safeAreaLayoutGuide.bottomAnchor)
+    }
+
+    func bottomY(to anchor: NSLayoutYAxisAnchor) {
+        view.bottomAnchor.constraint(equalTo: anchor)
+            .isActive = true
+    }
+
+    func centerX(to harbor: UIView) {
+        centerX(to: harbor.centerXAnchor)
     }
 
     func centerX(to anchor: NSLayoutXAxisAnchor) {
@@ -29,8 +46,7 @@ struct Anchoring {
 
 
     func centerY(to harbor: UIView) {
-        view.centerYAnchor.constraint(equalTo: harbor.centerYAnchor)
-            .isActive = true
+        centerY(to: harbor.centerYAnchor)
     }
 
     func centerY(to anchor: NSLayoutYAxisAnchor) {

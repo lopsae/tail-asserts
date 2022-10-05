@@ -23,6 +23,24 @@ class ViewController: UIViewController {
             label.anchoring.centerX(to: view)
             label.anchoring.centerY(to: view)
         }
+
+        view.setupSubview(UILabel()) { label in
+            label.text = "top label"
+            label.textAlignment = .center
+
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.anchoring.centerX(to: view)
+            label.anchoring.topY(toSafe: view)
+        }
+
+        view.setupSubview(UILabel()) { label in
+            label.text = "bottom label"
+            label.textAlignment = .center
+
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.anchoring.centerX(to: view)
+            label.anchoring.bottomY(toSafe: view)
+        }
     }
 
 
