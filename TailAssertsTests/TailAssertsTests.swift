@@ -10,30 +10,83 @@ import XCTest
 class TailAssertsTests: XCTestCase {
 
     func testFailureStruct() {
+
+
+
+        // TODO: replace with string.assert(equals: )
         let noMessageFailure = Failure.make(
             function: "testFunction()", file: "TestFile.swift", line: 55)
-        print(noMessageFailure.makeMessage())
+        XCTAssertEqual(noMessageFailure.makeMessage(),
+            "testFunction() failed")
+
+        let emptyMessageFailure = Failure.make(
+            message: "",
+            function: "testFunction()",
+            file: "TestFile.swift", line: 55)
+        XCTAssertEqual(emptyMessageFailure.makeMessage(),
+            "testFunction() failed")
+
+        let almostEmptyMessageFailure = Failure.make(
+            message: " ", // one space
+            function: "testFunction()",
+            file: "TestFile.swift", line: 55)
+        XCTAssertEqual(almostEmptyMessageFailure.makeMessage(),
+            "testFunction() failed:  ")
 
         let messageFailure = Failure.make(
-            message: "main message", function: "testFunction()", file: "TestFile.swift", line: 55)
-        print(messageFailure.makeMessage())
+            message: "main message",
+            function: "testFunction()",
+            file: "TestFile.swift", line: 55)
+        XCTAssertEqual(messageFailure.makeMessage(),
+            "testFunction() failed: main message")
 
-        let onlyOtherMessageFailure = Failure.make(
-            otherMessages: ["message one", "message two"], function: "testFunction()", file: "TestFile.swift", line: 55)
-        print(onlyOtherMessageFailure.makeMessage())
 
         let allMessageFailure = Failure.make(
             message: "main message", otherMessages: ["message one", "message two"],
             function: "testFunction()", file: "TestFile.swift", line: 55)
-        print(allMessageFailure.makeMessage())
+        XCTAssertEqual(allMessageFailure.makeMessage(),
+            "testFunction() failed: main message - message one - message two")
+
+        let onlyOtherMessageFailure = Failure.make(
+            otherMessages: ["message one", "message two"],
+            function: "testFunction()",
+            file: "TestFile.swift", line: 55)
+        XCTAssertEqual(onlyOtherMessageFailure.makeMessage(),
+            "testFunction() failed - message one - message two")
+
+        let emptyArrayOtherMessageFailure = Failure.make(
+            otherMessages: [],
+            function: "testFunction()",
+            file: "TestFile.swift", line: 55)
+        XCTAssertEqual(emptyArrayOtherMessageFailure.makeMessage(),
+            "testFunction() failed")
+
+        let emptyOtherMessageFailure = Failure.make(
+            otherMessages: ["", ""],
+            function: "testFunction()",
+            file: "TestFile.swift", line: 55)
+        XCTAssertEqual(emptyOtherMessageFailure.makeMessage(),
+            "testFunction() failed")
+
+        let someEmptyOtherMessageFailure = Failure.make(
+            otherMessages: ["", "message middle", ""],
+            function: "testFunction()",
+            file: "TestFile.swift", line: 55)
+        XCTAssertEqual(someEmptyOtherMessageFailure.makeMessage(),
+            "testFunction() failed - message middle")
+
 
         let functionFailure = Failure.make(
-            function: "testFunction(param:test:)", file: "TestFile.swift", line: 55)
-        print(functionFailure.makeMessage())
+            function: "testFunction(param:test:)",
+            file: "TestFile.swift", line: 55)
+        XCTAssertEqual(functionFailure.makeMessage(),
+            "testFunction(param:test:) failed")
 
         let cleanedFunctionFailure = Failure.make(
-            function: "cleanedTestFunction(param:test:_:file:line:)", file: "TestFile.swift", line: 55)
-        print(cleanedFunctionFailure.makeMessage())
+            function: "cleanedTestFunction(param:test:_:file:line:)",
+            file: "TestFile.swift", line: 55)
+        XCTAssertEqual(cleanedFunctionFailure.makeMessage(),
+            "cleanedTestFunction(param:test:) failed")
     }
 
     func testExample() throws {
@@ -41,12 +94,14 @@ class TailAssertsTests: XCTestCase {
         true.assertTrue()
         false.assertFalse()
 
+        false.assertTrue()
         false.assertTrue("caller message")
 
         Optional<String>.none.assertNil()
 
         let something: String? = "something"
         let nothing: String? = nil
+        // TODO: when message is empty there is still a trailing `-`
         something.assertNil()
         something.assertNil("caller message")
 

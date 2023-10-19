@@ -90,6 +90,7 @@ struct Failure {
             : "\(cleanFunction) failed: \(message)"
 
         var messageParts = [messageHead]
+        // TODO: prune empty otherMessages
         messageParts.append(contentsOf: otherMessages)
 
         let completeMessage = messageParts.joined(separator: " - ")
