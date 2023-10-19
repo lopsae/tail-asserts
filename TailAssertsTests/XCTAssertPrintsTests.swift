@@ -8,15 +8,16 @@ import XCTest
 
 class XCTAssertPrintsTests: XCTestCase {
 
-    /// Example outputs from XCTAssert function.
+    /// Example outputs from XCTAssert function. Used to inspect the default
+    /// messaging used by XCAssert functions.
     ///
-    /// Does not actually run any tests.
+    /// All failures in this function are ignored.
     func testExamplePrints() throws {
         let options = XCTExpectedFailure.Options()
         options.issueMatcher = { issue in
+            // Disables all issues result of XCTAssert functions
             return issue.type == .assertionFailure
         }
-
         XCTExpectFailure(options: options)
 
         XCTFail("test message")
